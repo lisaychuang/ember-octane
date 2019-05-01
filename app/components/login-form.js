@@ -1,7 +1,16 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class LoginFormComponent extends Component {
+    // track when userId changes
+    @tracked
+    userId = null;
+
+    get isDisabled() {
+        return !this.userId;
+    }
+
     // func to log out userId
     loginAsUserWithId(val){
         console.log('UserId: ', val);
@@ -17,5 +26,13 @@ export default class LoginFormComponent extends Component {
         const val = target.querySelector('select').value;
         evt.preventDefault();
         this.loginAsUserWithId(val);
+    }
+
+    /**
+     * @param {Event & { target: HTMLSelectElement } } evt
+    **/
+    @action
+    onSelectChanged(evt){
+        this.userId = evt.target.value;
     }
 }
