@@ -1,23 +1,24 @@
 <TeamSelector />
 
 <!-- Team Sidebar -->
-<TeamSidebar /> 
+<TeamSidebar />
 
 <!-- Channel -->
 <main class="flex-1 flex flex-col bg-white overflow-hidden channel">
 
-  <!-- Channel Header -->
-    <ChannelHeader />
+    <!-- Channel Header -->
+    <ChannelHeader @title="Frontend Chat" 
+                    @description="Let's chat" />
 
-  <!-- Channel Message List -->
-  <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
+    <!-- Channel Message List -->
+    <div class="py-4 flex-1 overflow-y-scroll channel-messages-list" role="list">
 
-    <!-- Message -->
-    <Message />
-    <Message />
+        <!-- Message -->
+        <Message />
+        <Message />
 
-  </div>
+    </div>
 
-  <!-- Channel Footer -->
-  <ChannelFooter />
+    <!-- Channel Footer -->
+    <ChannelFooter />
 </main>
